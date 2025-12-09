@@ -18,6 +18,27 @@ This repository contains two end-to-end automation systems built for medical aes
 - Enables prioritisation of high-intent clients and improves conversion.
 - Eliminates manual review and ensures accuracy in lead handling.
 
+
+   +------------------+          +----------------+          +--------------------+
+   |  Lead Source     |  --->    |    Zapier      |  --->    |    OpenAI (LLM)    |
+   | (Web Form, IG)   |          |  Trigger Zap   |          | Extract + Generate |
+   +------------------+          +----------------+          +--------------------+
+                                          |                           |
+                                          v                           v
+                                 +----------------+          +--------------------+
+                                 |  HubSpot CRM   |          | Auto Reply Message |
+                                 |  AI Fields Set |          | Returned to Zap    |
+                                 +----------------+          +--------------------+
+                                          |
+                                          v
+                                 +----------------+
+                                 |  Clinic Team   |
+                                 |  Lead Priorit. |
+                                 +----------------+
+  <img width="539" height="628" alt="image" src="https://github.com/user-attachments/assets/653260c0-9283-4edc-b0b5-ff2e71c00501" />
+
+
+
 ---
 
 ## Project 2 — Intelligent Inventory Automation
@@ -31,6 +52,34 @@ This repository contains two end-to-end automation systems built for medical aes
 - Sends automatic Gmail alerts to clinic managers.
 - Prevents last-minute stockouts and expired product usage.
 - Saves operational time and maintains regulatory compliance.
+
+   +---------------------+      
+         | Practitioner Input  |
+         |  Google Form        |
+         +----------+----------+
+                    |
+                    v
+         +---------------------+
+         | Zapier Trigger      |
+         | Update Sheet        |
+         +---------------------+
+                    |
+        +-----------+-----------+
+        |                       |
+        v                       v
++----------------+     +-----------------------+
+| Inventory Sheet|     | Expiry / Low Stock   |
+|   Updated      |     | Condition Check      |
++----------------+     +-----------------------+
+                                |
+                                v
+                      +----------------------+
+                      | Gmail Alert Email    |
+                      | Sent to Manager      |
+                      +----------------------+
+<img width="763" height="657" alt="image" src="https://github.com/user-attachments/assets/caacd4ac-9814-4056-aa12-aedbedb8d1de" />
+
+
 
 ---
 
